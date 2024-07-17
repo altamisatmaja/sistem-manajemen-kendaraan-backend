@@ -1,5 +1,5 @@
 <header
-    class="sticky top-0 before:absolute before:inset-0 bg-orange-600 before:backdrop-blur-md max-lg:before:bg-blue/90 dark:max-lg:before:bg-orange-600 before:-z-10 z-30">
+    class="sticky top-0 before:absolute before:inset-0 bg-orange-600 before:backdrop-blur-md max-lg:before:bg-blue/90 dark:max-lg:before:bg-orange-600 before:-z-10 z-20">
     <div class="relative bg-orange-600 px-8 md:px-12 aos-init">
         <div class="absolute left-0 top-0 ml-10 space-x-reverse pointer-events-none" aria-hidden="true">
             <svg width="300" height="100" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -1,4 +1,4 @@
-<div class="flex flex-col col-span-full sm:col-span-6 bg-white  shadow-sm rounded-xl border-2 border-gray-300">
+<div class="flex flex-col col-span-full sm:col-span-6 bg-white  shadow-sm rounded-xl border-2 border-gray-200">
     <header class="px-5 py-4 border-b border-gray-100 ">
         <h2 class="font-semibold text-gray-800 ">Direct VS Indirect</h2>
     </header>

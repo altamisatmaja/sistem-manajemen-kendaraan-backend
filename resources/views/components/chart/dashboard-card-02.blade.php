@@ -1,4 +1,4 @@
-<div class="flex flex-col col-span-full sm:col-span-6 xl:col-span-4 bg-white  shadow-sm rounded-xl border-2 border-gray-300">
+<div class="flex flex-col col-span-full sm:col-span-6 xl:col-span-4 bg-white  shadow-sm rounded-xl border-2 border-gray-200">
     <div class="px-5 pt-5">
         <header class="flex justify-between items-start mb-2">
             <h2 class="text-lg font-semibold text-gray-800 ">Acme Advanced</h2>

@@ -1,5 +1,5 @@
 <!-- Search button -->
-<div x-data="{ searchOpen: false }">
+<div x-data="{ searchOpen: false }" class="z-50">
     <!-- Button -->
     <button
         class="w-8 h-8 flex items-center justify-center hover:bg-gray-100 lg:hover:bg-gray-200   rounded-full"

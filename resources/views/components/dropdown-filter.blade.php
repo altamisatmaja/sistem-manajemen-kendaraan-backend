@@ -4,7 +4,7 @@
 
 <div class="relative inline-flex" x-data="{ open: false }">
     <button
-        class="btn px-2.5 bg-white  border-gray-200 hover:border-gray-300   text-gray-400 "
+        class="btn  px-2.5 bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-400 "
         aria-haspopup="true" @click.prevent="open = !open" :aria-expanded="open">
         <span class="sr-only">Filter</span><wbr>
         <svg class="fill-current" width="16" height="16" viewBox="0 0 16 16">
