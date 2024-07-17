@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
+            $table->tinyInteger('category_vehicles_id');
+            $table->string('nama');
+            $table->string('plot')->unique();
             $table->timestamps();
         });
     }

@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('fuel_consumption', function (Blueprint $table) {
             $table->id();
+            $table->tinyInteger('region_id');
+            $table->tinyInteger('vehicle_id');
+            $table->tinyInteger('fuel_amount');
+            $table->tinyInteger('cost');
+            $table->string('kilometer');
+            $table->string('keterangan');
+            $table->string('attachment');
             $table->timestamps();
         });
     }

@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('offices', function (Blueprint $table) {
             $table->id();
+            $table->tinyInteger('region_id');
+            $table->tinyInteger('level_office_id');
+            $table->string('nama');
+            $table->tinyInteger('refrence_to_offices');
             $table->timestamps();
         });
     }

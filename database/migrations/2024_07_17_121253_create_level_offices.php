@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('level_offices', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->string('keterangan');
             $table->timestamps();
         });
     }

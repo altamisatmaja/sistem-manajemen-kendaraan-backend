@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('services_schedules', function (Blueprint $table) {
             $table->id();
+            $table->tinyInteger('region_id');
+            $table->tinyInteger('vehicle_id');
+            $table->tinyInteger('cost');
+            $table->dateTime('service_date');
+            $table->string('keterangan');
+            $table->string('attachment');
             $table->timestamps();
         });
     }

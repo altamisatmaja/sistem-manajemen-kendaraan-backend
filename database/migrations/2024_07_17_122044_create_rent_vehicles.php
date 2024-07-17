@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('rent_vehicles', function (Blueprint $table) {
             $table->id();
+            $table->tinyInteger('vehicles_id');
+            $table->tinyInteger('company_rent_vehicles_id');
+            $table->tinyInteger('cost_rent');
+            $table->dateTime('rent_start_date');
+            $table->dateTime('rent_end_date');
             $table->timestamps();
         });
     }

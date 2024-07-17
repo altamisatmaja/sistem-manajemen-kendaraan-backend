@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('mining_states', function (Blueprint $table) {
             $table->id();
+            $table->tinyInteger('region_id');
+            $table->string('keterangan');
             $table->timestamps();
         });
     }
