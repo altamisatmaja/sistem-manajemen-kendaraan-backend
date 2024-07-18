@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('owned_vehicles', function (Blueprint $table) {
             $table->id();
-            $table->tinyInteger('vehicles_id');
             $table->dateTime('bought_at');
+
+            $table->tinyInteger('vehicle_id');
             $table->timestamps();
         });
     }

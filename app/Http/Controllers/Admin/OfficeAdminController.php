@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Approval;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller
+class OfficeAdminController extends Controller
 {
     //
 }

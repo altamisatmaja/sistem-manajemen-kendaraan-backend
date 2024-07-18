@@ -15,10 +15,11 @@ return new class extends Migration
             $table->id();
             $table->tinyInteger('region_id');
             $table->tinyInteger('vehicle_id');
-            $table->tinyInteger('cost');
-            $table->dateTime('service_date');
-            $table->string('keterangan');
+            $table->tinyInteger('biaya');
             $table->string('attachment');
+            $table->string('keterangan');
+
+            $table->dateTime('service_at');
             $table->timestamps();
         });
     }

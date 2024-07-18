@@ -11,13 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('offices', function (Blueprint $table) {
+        Schema::create('model_vehicles', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_kantor');
-
-            $table->tinyInteger('region_id');
-            $table->tinyInteger('level_office_id');
-            $table->tinyInteger('refrence_to_offices_id');
+            $table->string('nama_model');
             $table->timestamps();
         });
     }
@@ -27,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('offices');
+        Schema::dropIfExists('model_vehicles');
     }
 };

@@ -1,6 +1,6 @@
 <div x-data="{ sidebarOpen: false }" class="flex h-screen bg-white shadow-md">
     <!-- Sidebar backdrop (mobile only) -->
-    <div x-show="sidebarOpen" class="fixed inset-0 bg-black bg-opacity-50 z-30 lg:hidden" @click="sidebarOpen = false">
+    <div x-show="sidebarOpen" class="fixed inset-0 bg-gray-800 bg-opacity-50 z-30 lg:hidden" @click="sidebarOpen = false">
     </div>
 
     <!-- Sidebar -->

@@ -13,9 +13,18 @@ return new class extends Migration
     {
         Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
-            $table->tinyInteger('category_vehicles_id');
             $table->string('nama');
-            $table->string('plot')->unique();
+            $table->string('plat_nomor')->unique();
+            $table->string('nomor_identifikasi')->unique();
+            $table->string('picture');
+            $table->string('tahun_kendaraan');
+            $table->tinyInteger('kapasitas_muatan');
+            $table->enum('status_kepemilikan', ['Sewa', 'Milik Perusahaan']);
+
+            $table->tinyInteger('merk_vehicle_id');
+            $table->tinyInteger('model_vehicle_id');
+            $table->tinyInteger('category_vehicle_id');
+            $table->tinyInteger('type_vehicle_id');
             $table->timestamps();
         });
     }

@@ -13,13 +13,16 @@ return new class extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
+            $table->string('nama_lengkap');
+            $table->tinyInteger('nik');
             $table->string('photo');
-            $table->string('sim');
-            $table->string('phone');
+            $table->string('nomor_hp');
+            $table->dateTime('tanggal_lahir');
+            $table->enum('jenis_kelamin', ['Laki-laki', 'Perempuan']);
             $table->dateTime('work_at');
-            $table->dateTime('age');
-            $table->enum('gender', ['Laki-laki', 'Perempuan']);
+
+            $table->tinyInteger('office_id');
+            $table->tinyInteger('employee_position_id');
             $table->timestamps();
         });
     }

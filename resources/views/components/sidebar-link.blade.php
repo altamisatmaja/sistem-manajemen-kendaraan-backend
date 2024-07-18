@@ -1,7 +1,7 @@
 <ul class="space-y-2">
     <li
         class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-orange-400 hover:text-white duration-200">
-        <a href="{{ route('dashboard') }}" class="block text-gray-800 hover:text-white truncate transition">
+        <a href="{{ route('admin.dashboard') }}" class="block text-gray-800 hover:text-white truncate transition">
             <div class="flex items-center hover:text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px"
                     fill="currentColor" class="hover:text-white">

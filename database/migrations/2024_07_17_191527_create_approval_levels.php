@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('company_rent_vehicles', function (Blueprint $table) {
+        Schema::create('approval_levels', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('alamat');
+            $table->tinyInteger('level');
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('company_rent_vehicles');
+        Schema::dropIfExists('approval_levels');
     }
 };

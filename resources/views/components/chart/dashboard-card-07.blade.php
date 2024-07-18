@@ -28,7 +28,7 @@
                     </tr>
                 </thead>
                 <!-- Table body -->
-                <tbody class="text-sm font-medium divide-y divide-gray-100 dark:divide-gray-700/60">
+                <tbody class="text-sm font-medium divide-y divide-gray-100 dark:divide-gray-200">
                     <!-- Row -->
                     <tr>
                         <td class="p-2">
