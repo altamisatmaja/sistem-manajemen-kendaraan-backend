@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Approval;
+namespace App\Http\Controllers\Approver;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class DashboardApprovalController extends Controller
+class DashboardApproverController extends Controller
 {
     public function index(){
-        //TODO
+        return view('pages.dashboard.approver.index');
     }
 }

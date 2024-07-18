@@ -1,6 +1,6 @@
 <ul class="space-y-2">
     <li
-        class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-orange-400 hover:text-white duration-200">
+        class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-orange-600 hover:text-white duration-200">
         <a href="{{ route('admin.dashboard') }}" class="block text-gray-800 hover:text-white truncate transition">
             <div class="flex items-center hover:text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px"
@@ -13,7 +13,7 @@
         </a>
     </li>
     <li class="mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))]" x-data="{ open: {{ in_array(Request::segment(1), ['tasks']) ? 1 : 0 }} }">
-        <a class="block rounded-lg pl-3 pr-3 py-2 text-gray-800 hover:bg-orange-400  truncate transition @if (!in_array(Request::segment(1), ['tasks'])) {{ 'hover:text-white ' }} @endif"
+        <a class="block rounded-lg pl-3 pr-3 py-2 text-gray-800 hover:bg-orange-600  truncate transition @if (!in_array(Request::segment(1), ['tasks'])) {{ 'hover:text-white ' }} @endif"
             href="#0" @click.prevent="open = !open; sidebarExpanded = true">
             <div class="flex items-center justify-between">
                 <div class="flex items-center duration-200">
@@ -64,7 +64,7 @@
         </div>
     </li>
     <li
-        class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-orange-400 hover:text-white duration-200">
+        class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-orange-600 hover:text-white duration-200">
         <a href="{{ route('admin.dashboard.schedule-services') }}" class="block text-gray-800  truncate transition">
             <div class="flex items-center hover:text-white">
                 <svg class="hover:text-white" xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960"
@@ -77,7 +77,7 @@
         </a>
     </li>
     <li
-        class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-orange-400 hover:text-white duration-200">
+        class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-orange-600 hover:text-white duration-200">
         <a href="{{ route('admin.dashboard.fuel') }}" class="block text-gray-800 hover:text-white truncate transition">
             <div class="flex items-center hover:text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px"
@@ -90,7 +90,7 @@
         </a>
     </li>
     <li
-        class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-orange-400 ">
+        class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-orange-600 ">
         <a class="block text-gray-800  truncate transition" href="{{ route('admin.dashboard.office') }}">
             <div class="flex items-center hover:text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px"
@@ -103,7 +103,7 @@
         </a>
     </li>
     <li
-        class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-orange-400 ">
+        class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-orange-600 ">
         <a class="block text-gray-800  truncate transition" href="{{ route('admin.dashboard.vehicle') }}">
             <div class="flex items-center hover:text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px"
@@ -116,7 +116,7 @@
         </a>
     </li>
     <li
-        class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-orange-400 ">
+        class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-orange-600 ">
         <a class="block text-gray-800  truncate transition" href="{{ route('admin.dashboard.employee') }}">
             <div class="flex items-center hover:text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px"
@@ -129,7 +129,7 @@
         </a>
     </li>
     <li
-        class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-orange-400 ">
+        class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-orange-600 ">
         <a class="block text-gray-800  truncate transition" href="{{ route('admin.dashboard.history') }}">
             <div class="flex items-center hover:text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px"
@@ -144,7 +144,7 @@
 
     <div class="space-y-2 pt-2 border-t-2 border-gray-200">
         <li
-            class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-orange-400 ">
+            class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-orange-600 ">
             <a class="block text-gray-800  truncate transition" href="{{ route('admin.dashboard') }}">
                 <div class="flex items-center hover:text-white">
                     <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px"
@@ -157,17 +157,19 @@
             </a>
         </li>
         <li
-            class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-orange-400 ">
-            <a class="block text-gray-800  truncate transition" href="{{ route('admin.dashboard') }}">
-                <div class="flex items-center hover:text-white">
+            class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-orange-600  hover:text-white ">
+            <form action="{{ route('logout') }}" method="POST" class="block text-gray-800  truncate transition">
+                @csrf
+                @method('POST')
+                <button class="flex items-center hover:text-white" type="submit">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
                         fill="currentColor">
                         <path
                             d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h240q17 0 28.5 11.5T480-800q0 17-11.5 28.5T440-760H200v560h240q17 0 28.5 11.5T480-160q0 17-11.5 28.5T440-120H200Zm487-320H400q-17 0-28.5-11.5T360-480q0-17 11.5-28.5T400-520h287l-75-75q-11-11-11-27t11-28q11-12 28-12.5t29 11.5l143 143q12 12 12 28t-12 28L669-309q-12 12-28.5 11.5T612-310q-11-12-10.5-28.5T613-366l74-74Z" />
                     </svg>
                     <span class="text-lg font-medium ml-4">Logout</span>
-                </div>
-            </a>
+                </button>
+            <form/>
         </li>
     </div>
 </ul>

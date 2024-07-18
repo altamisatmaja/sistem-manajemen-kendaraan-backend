@@ -16,11 +16,9 @@ return new class extends Migration
             $table->string('nama_kantor');
 
             $table->unsignedBigInteger('region_id');
-            $table->unsignedBigInteger('level_office_id');
-            $table->unsignedBigInteger('refrence_to_offices_id');
+            $table->unsignedBigInteger('refrence_to_offices_id')->nullable();
 
             $table->foreign('region_id')->references('id')->on('regions')->onDelete('cascade');
-            $table->foreign('level_office_id')->references('id')->on('level_offices')->onDelete('cascade');
             $table->foreign('refrence_to_offices_id')->references('id')->on('offices')->onDelete('cascade');
             $table->timestamps();
         });

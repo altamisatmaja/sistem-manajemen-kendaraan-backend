@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Approver\DashboardApproverController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,3 +13,5 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('approver/dashboard', [DashboardApproverController::class, 'index'])->name('approver.dashboard');
