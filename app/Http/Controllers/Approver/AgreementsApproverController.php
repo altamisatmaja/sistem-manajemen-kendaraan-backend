@@ -1,19 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Approver;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class BookingAdminController extends Controller
+class AgreementsApproverController extends Controller
 {
     public function index(){
-        return view('pages.dashboard.admin.bookings.index');
+        //TODO
     }
 
-    public function history(){
-        return view('pages.dashboard.admin.bookings.history');
-    }
     public function create(Request $request){
         // TODO
     }

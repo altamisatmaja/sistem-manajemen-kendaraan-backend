@@ -10,4 +10,21 @@ class ServiceScheduleAdminController extends Controller
     public function index(){
         return view('pages.dashboard.admin.service-schedules.index');
     }
+
+    public function create(Request $request){
+        // TODO
+    }
+
+    public function store(Request $request){
+        // TODO
+    }
+    public function show(Request $request){
+        // TODO
+    }
+    public function update(Request $request){
+        // TODO
+    }
+    public function destroy(Request $request){
+        // TODO
+    }
 }

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('odometer');
             $table->string('keterangan');
             $table->string('attachment');
+            $table->dateTime('fuel_at');
 
             $table->unsignedBigInteger('vehicle_id');
 

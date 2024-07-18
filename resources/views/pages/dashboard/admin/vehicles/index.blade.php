@@ -27,15 +27,7 @@
                             <h1 class="text-xl md:text-2xl text-gray-600 font-semibold">Model</h1>
                         </div>
                         <div class="grid grid-flow-col sm:auto-cols-max justify-start sm:justify-end gap-2">
-                            <button
-                                class="px-3 py-2 lg:gap-x-2 font-medium text-sm inline-flex items-center justify-center rounded-lg leading-5 transition bg-white border-2  border-gray-200 hover:border-gray-300  text-gray-400 ">
-                                <svg class="fill-current shrink-0 xs:hidden" width="16" height="16"
-                                    viewBox="0 0 16 16">
-                                    <path
-                                        d="M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z" />
-                                </svg>
-                                <span class="hidden lg:block">Tambah model</span>
-                            </button>
+                            @include('components.modal-create-model-vehicle')
                         </div>
                     </div>
                     <div class="lg:-mx-8">
@@ -78,15 +70,7 @@
                             <h1 class="text-xl md:text-2xl text-gray-600 font-semibold">Merk</h1>
                         </div>
                         <div class="grid grid-flow-col sm:auto-cols-max justify-start sm:justify-end gap-2">
-                            <button
-                                class="px-3 py-2 lg:gap-x-2 font-medium text-sm inline-flex items-center justify-center rounded-lg leading-5 transition bg-white border-2  border-gray-200 hover:border-gray-300  text-gray-400 ">
-                                <svg class="fill-current shrink-0 xs:hidden" width="16" height="16"
-                                    viewBox="0 0 16 16">
-                                    <path
-                                        d="M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z" />
-                                </svg>
-                                <span class="hidden lg:block">Tambah merk</span>
-                            </button>
+                            @include('components.modal-create-merk-vehicle')
                         </div>
                     </div>
                     <div class="lg:-mx-8">
@@ -130,15 +114,7 @@
                             <h1 class="text-xl md:text-2xl text-gray-600 font-semibold">Jenis</h1>
                         </div>
                         <div class="grid grid-flow-col sm:auto-cols-max justify-start sm:justify-end gap-2">
-                            <button
-                                class="px-3 py-2 lg:gap-x-2 font-medium text-sm inline-flex items-center justify-center rounded-lg leading-5 transition bg-white border-2  border-gray-200 hover:border-gray-300  text-gray-400 ">
-                                <svg class="fill-current shrink-0 xs:hidden" width="16" height="16"
-                                    viewBox="0 0 16 16">
-                                    <path
-                                        d="M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z" />
-                                </svg>
-                                <span class="hidden lg:block">Tambah jenis</span>
-                            </button>
+                            @include('components.modal-create-type-vehicle')
                         </div>
                     </div>
                     <div class="lg:-mx-8">
@@ -182,15 +158,7 @@
                             <h1 class="text-xl md:text-2xl text-gray-600 font-semibold">Kategori</h1>
                         </div>
                         <div class="grid grid-flow-col sm:auto-cols-max justify-start sm:justify-end gap-2">
-                            <button
-                                class="px-3 py-2 lg:gap-x-2 font-medium text-sm inline-flex items-center justify-center rounded-lg leading-5 transition bg-white border-2  border-gray-200 hover:border-gray-300  text-gray-400 ">
-                                <svg class="fill-current shrink-0 xs:hidden" width="16" height="16"
-                                    viewBox="0 0 16 16">
-                                    <path
-                                        d="M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z" />
-                                </svg>
-                                <span class="hidden lg:block">Tambah kategori</span>
-                            </button>
+                            @include('components.modal-create-category-vehicle')
                         </div>
                     </div>
                     <div class="lg:-mx-8">
@@ -266,7 +234,8 @@
                                     class="hidden lg:table-cell px-4 py-3.5 text-sm font-normal text-center text-gray-100">
                                     Nomor Identifikasi
                                 </th>
-                                <th scope="col" class="hidden lg:table-cell px-4 py-3.5 text-sm font-normal text-center text-gray-100">
+                                <th scope="col"
+                                    class="hidden lg:table-cell px-4 py-3.5 text-sm font-normal text-center text-gray-100">
                                     Tahun
                                 </th>
                                 <th scope="col" class="px-4 py-3.5 text-sm font-normal text-center text-gray-100">
@@ -288,7 +257,9 @@
                                 <td
                                     class="hidden lg:table-cell px-4 py-4 text-sm text-gray-500 text-center whitespace-nowrap">
                                     4S3B1OCP9NSI9</td>
-                                <td class="hidden lg:table-cell px-4 py-4 text-sm text-gray-500 text-center whitespace-nowrap">2002</td>
+                                <td
+                                    class="hidden lg:table-cell px-4 py-4 text-sm text-gray-500 text-center whitespace-nowrap">
+                                    2002</td>
                                 <td class="px-4 py-4 text-sm text-gray-500 text-center whitespace-nowrap">
                                     <div class="flex justify-center items-center h-full">
                                         <img class="w-10 h-10 rounded"
