@@ -13,15 +13,18 @@ return new class extends Migration
     {
         Schema::create('fuel_consumption', function (Blueprint $table) {
             $table->id();
-            $table->tinyInteger('biaya');
-            $table->tinyInteger('volume_bbm');
+            $table->integer('biaya');
+            $table->integer('volume_bbm');
             $table->enum('jenis_bahan_bakar', ['Solar, Bensin']);
-            $table->string('odometer');
+            $table->integer('odometer');
             $table->string('keterangan');
             $table->string('attachment');
 
-            $table->tinyInteger('region_id');
-            $table->tinyInteger('vehicle_id');
+            $table->unsignedBigInteger('region_id');
+            $table->unsignedBigInteger('vehicle_id');
+
+            $table->foreign('region_id')->references('id')->on('regions')->onDelete('cascade');
+            $table->foreign('vehicle_id')->references('id')->on('vehicles')->onDelete('cascade');
             $table->timestamps();
         });
     }

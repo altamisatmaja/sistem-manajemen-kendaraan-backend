@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('nama_tambang');
             $table->string('alamat_lengkap');
 
-            $table->tinyInteger('region_id');
+            $table->unsignedBigInteger('region_id');
+            $table->foreign('region_id')->references('id')->on('regions')->onDelete('cascade');
             $table->timestamps();
         });
     }

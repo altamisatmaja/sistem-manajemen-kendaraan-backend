@@ -18,13 +18,18 @@ return new class extends Migration
             $table->string('nomor_identifikasi')->unique();
             $table->string('picture');
             $table->string('tahun_kendaraan');
-            $table->tinyInteger('kapasitas_muatan');
+            $table->integer('kapasitas_muatan');
             $table->enum('status_kepemilikan', ['Sewa', 'Milik Perusahaan']);
 
-            $table->tinyInteger('merk_vehicle_id');
-            $table->tinyInteger('model_vehicle_id');
-            $table->tinyInteger('category_vehicle_id');
-            $table->tinyInteger('type_vehicle_id');
+            $table->unsignedBigInteger('merk_vehicle_id');
+            $table->unsignedBigInteger('model_vehicle_id');
+            $table->unsignedBigInteger('category_vehicle_id');
+            $table->unsignedBigInteger('type_vehicle_id');
+
+            $table->foreign('merk_vehicle_id')->references('id')->on('merk_vehicles')->onDelete('cascade');
+            $table->foreign('model_vehicle_id')->references('id')->on('model_vehicles')->onDelete('cascade');
+            $table->foreign('category_vehicle_id')->references('id')->on('category_vehicles')->onDelete('cascade');
+            $table->foreign('type_vehicle_id')->references('id')->on('type_vehicles')->onDelete('cascade');
             $table->timestamps();
         });
     }

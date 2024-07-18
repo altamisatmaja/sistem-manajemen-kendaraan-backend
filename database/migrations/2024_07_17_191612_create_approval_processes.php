@@ -18,9 +18,13 @@ return new class extends Migration
             $table->dateTime('approved_at');
             $table->dateTime('rejected_at');
 
-            $table->tinyInteger('vehicle_booking_id');
-            $table->tinyInteger('approval_level_id');
-            $table->tinyInteger('approver_id');
+            $table->unsignedBigInteger('vehicle_booking_id');
+            $table->unsignedBigInteger('approval_level_id');
+            $table->unsignedBigInteger('approver_id');
+
+            $table->foreign('vehicle_booking_id')->references('id')->on('vehicle_bookings')->onDelete('cascade');
+            $table->foreign('approval_level_id')->references('id')->on('approval_levels')->onDelete('cascade');
+            $table->foreign('approver_id')->references('id')->on('approvers')->onDelete('cascade');
             $table->timestamps();
         });
     }

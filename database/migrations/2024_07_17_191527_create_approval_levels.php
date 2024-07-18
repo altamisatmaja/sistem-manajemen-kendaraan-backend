@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('approval_levels', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->tinyInteger('level');
+            $table->integer('level');
             $table->timestamps();
         });
     }

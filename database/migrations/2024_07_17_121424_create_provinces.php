@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('nama_provinsi');
 
-            $table->integer('region_id');
+            $table->unsignedBigInteger('region_id');
+            $table->foreign('region_id')->references('id')->on('regions')->onDelete('cascade');
             $table->timestamps();
         });
     }

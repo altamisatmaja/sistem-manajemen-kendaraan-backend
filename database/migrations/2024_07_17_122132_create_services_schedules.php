@@ -13,13 +13,16 @@ return new class extends Migration
     {
         Schema::create('services_schedules', function (Blueprint $table) {
             $table->id();
-            $table->tinyInteger('region_id');
-            $table->tinyInteger('vehicle_id');
-            $table->tinyInteger('biaya');
+            $table->integer('biaya');
             $table->string('attachment');
             $table->string('keterangan');
 
-            $table->dateTime('service_at');
+            $table->dateTime('schedule_date');
+            $table->unsignedBigInteger('region_id');
+            $table->unsignedBigInteger('vehicle_id');
+
+            $table->foreign('region_id')->references('id')->on('regions')->onDelete('cascade');
+            $table->foreign('vehicle_id')->references('id')->on('vehicles')->onDelete('cascade');
             $table->timestamps();
         });
     }
