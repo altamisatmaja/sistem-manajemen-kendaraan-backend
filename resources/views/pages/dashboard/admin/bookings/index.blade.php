@@ -40,28 +40,25 @@
                                             </th>
                                             <th scope="col"
                                                 class="px-4 py-3.5 text-sm font-normal text-center text-gray-100 ">
-                                                Biaya
+                                                Durasi
                                             </th>
                                             <th scope="col"
                                                 class="px-4 py-3.5 text-sm font-normal text-center text-gray-100 ">
-                                                Volume
+                                                Keperluan
                                             </th>
                                             <th scope="col"
                                                 class="hidden lg:table-cell px-4 py-3.5 text-sm font-normal text-center text-gray-100 ">
-                                                Jenis BBM
+                                                Asal
                                             </th>
                                             <th scope="col"
                                                 class="hidden lg:table-cell px-4 py-3.5 text-sm font-normal text-center text-gray-100 ">
-                                                Odometer
+                                                Tujuan
                                             </th>
                                             <th scope="col"
                                                 class="px-4 py-3.5 text-sm font-normal text-center text-gray-100 ">
-                                                Keterangan
+                                                Nama Driver
                                             </th>
-                                            <th scope="col"
-                                                class="px-4 py-3.5 text-sm font-normal text-center text-gray-100 ">
-                                                Bukti
-                                            </th>
+
                                             <th scope="col"
                                                 class="px-4 py-3.5 text-sm font-normal text-center text-gray-100 ">
                                                 Aksi
@@ -69,39 +66,36 @@
                                         </tr>
                                     </thead>
                                     <tbody class="bg-white divide-y divide-gray-200  ">
-                                        <tr>
-                                            <td class="px-4 py-4 text-sm text-gray-500 text-center ">
-                                                1</td>
-                                            <td class="px-4 py-4 text-sm text-gray-500 text-center ">
-                                                HINO RK - AE13892</td>
-                                            <td class="px-4 py-4 text-sm text-gray-500 text-center ">
-                                                Rp 31.211.000</td>
-                                            <td class="px-4 py-4 text-sm text-gray-500 text-center ">
-                                                20 Liter</td>
-                                            <td class="hidden lg:table-cell px-4 py-4 text-sm text-gray-500 text-center ">
-                                                Solar</td>
-                                            <td class="hidden lg:table-cell px-4 py-4 text-sm text-gray-500 text-center ">
-                                                12314</td>
-                                            <td class="px-4 py-4 text-sm text-gray-500 text-center ">
-                                                Perjalanan dinas</td>
-                                            <td class="px-4 py-4 text-sm text-gray-500 text-center whitespace-nowrap">
-                                                <div class="flex justify-center items-center h-full">
-                                                    <img class="w-10 h-10 rounded"
-                                                        src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-                                                        alt="Default avatar">
-                                                </div>
-                                            </td>
-                                            <td class="px-4 py-4 text-sm text-center">
-                                                <button
-                                                    class="text-gray-500 px-1 transition-colors duration-200   hover:text-indigo-500 focus:outline-none">
-                                                    Ubah
-                                                </button>
-                                                <button
-                                                    class="text-gray-500 px-1 transition-colors duration-200   hover:text-indigo-500 focus:outline-none">
-                                                    Hapus
-                                                </button>
-                                            </td>
-                                        </tr>
+                                        @foreach ($vehicle_bookings as $vehicle_booking)
+                                            <tr>
+                                                <td class="px-4 py-4 text-sm text-gray-500 text-center ">
+                                                    {{ $loop->iteration }}</td>
+                                                <td class="px-4 py-4 text-sm text-gray-500 text-center ">
+                                                    {{ $vehicle_booking['nama_kendaraan' ]}} - {{ $vehicle_booking['plat_nomor'] }} </td>
+                                                <td class="px-4 py-4 text-sm text-gray-500 text-center ">
+                                                    {{ $vehicle_booking['durasi'] }} hari</td>
+                                                <td class="px-4 py-4 text-sm text-gray-500 text-center ">
+                                                    {{ $vehicle_booking['keperluan'] }}</td>
+                                                <td
+                                                    class="hidden lg:table-cell px-4 py-4 text-sm text-gray-500 text-center ">
+                                                    {{ $vehicle_booking['asal'] }}</td>
+                                                <td
+                                                    class="hidden lg:table-cell px-4 py-4 text-sm text-gray-500 text-center ">
+                                                    {{ $vehicle_booking['tujuan'] }}</td>
+                                                <td class="px-4 py-4 text-sm text-gray-500 text-center ">
+                                                    {{ $vehicle_booking['nama_driver'] }}</td>
+                                                <td class="px-4 py-4 text-sm text-center">
+                                                    <button
+                                                        class="text-gray-500 px-1 transition-colors duration-200   hover:text-indigo-500 focus:outline-none">
+                                                        Ubah
+                                                    </button>
+                                                    <button
+                                                        class="text-gray-500 px-1 transition-colors duration-200   hover:text-indigo-500 focus:outline-none">
+                                                        Hapus
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

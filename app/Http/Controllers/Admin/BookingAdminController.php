@@ -12,19 +12,46 @@ use App\Models\MiningState;
 use App\Models\Vehicle;
 use App\Models\VehicleBooking;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class BookingAdminController extends Controller
 {
     public function index(){
-        return view('pages.dashboard.admin.bookings.index');
+        $vehicle_booking_collection = VehicleBooking::with('employees', 'vehicles', 'start_mining_states','end_mining_states')->get();
+
+        $vehicle_bookings = [];
+        foreach ($vehicle_booking_collection as $vehicle_booking) {
+            foreach ($vehicle_booking->employees as $employee) {
+                foreach ($vehicle_booking->vehicles as $vehicle) {
+                    foreach ($vehicle_booking->start_mining_states as $start_state) {
+                        foreach ($vehicle_booking->end_mining_states as $end_state) {
+                            $vehicle_bookings[] = [
+                                'nama_kendaraan' => $vehicle->nama,
+                                'plat_nomor' => $vehicle->plat_nomor,
+                                'durasi' => $vehicle_booking->durasi,
+                                'keperluan' => $vehicle_booking->keperluan,
+                                'asal' => $start_state->nama_tambang,
+                                'tujuan' => $end_state->nama_tambang,
+                                'nama_driver' => $employee->nama_lengkap,
+                            ];
+                        }
+                    }
+                }
+            }
+        }
+
+        return view('pages.dashboard.admin.bookings.index', compact('vehicle_bookings'));
     }
 
     public function history(){
         return view('pages.dashboard.admin.bookings.history');
     }
     public function create(Request $request){
+
+        logger('View data booking for create booking by admin:', ['data' => $request->all(), 'user' => Auth::user()]);
+
         $mining_states = MiningState::all();
         $employees = Employee::where('employee_position_id', 5)->get();
         $vehicles = Vehicle::all();
@@ -46,6 +73,8 @@ class BookingAdminController extends Controller
     public function store(Request $request){
         DB::beginTransaction();
 
+        logger('Store booking by admin:', ['data' => $request->all(), 'user' => Auth::user()]);
+
         try {
             $validator = Validator::make($request->all(), [
                 'durasi' => 'required|integer',
@@ -59,8 +88,6 @@ class BookingAdminController extends Controller
                 'approvers.*.approver_id' => 'required|integer',
                 'approvers.*.level' => 'required|integer|between:1,5',
             ]);
-
-            // dd($request->all());
 
             if ($validator->fails()) {
                 return redirect()->back()->withErrors($validator)->withInput();
@@ -76,7 +103,6 @@ class BookingAdminController extends Controller
                 'vehicle_id',
             ]));
 
-            // dd($vehicleBooking);
 
             foreach ($request->approvers as $approver) {
                 ApprovalProcess::create([
