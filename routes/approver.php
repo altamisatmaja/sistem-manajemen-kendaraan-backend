@@ -14,4 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('approver/dashboard', [DashboardApproverController::class, 'index'])->name('approver.dashboard');
+Route::middleware(['auth', 'role: Admin'])->group(function (){
+    Route::get('approver/dashboard', [DashboardApproverController::class, 'index'])->name('approver.dashboard');
+});

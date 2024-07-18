@@ -16,12 +16,16 @@ class RoleCheck
      */
     public function handle(Request $request, Closure $next, ...$roles): Response
     {
+        logger('Middleware roles check:', ['roles' => $roles, 'user' => Auth::user()]);
+
         foreach ($roles as $role) {
             if (Auth::check() && Auth::user()->role == $role) {
                 return $next($request);
             }
         }
+
         Auth::logout();
-        return redirect()->route('login')->with('status','Peringatan! Anda tidak memiliki akses untuk masuk.');
+
+        return redirect()->route('login')->with('status', 'Peringatan! Anda tidak memiliki akses untuk masuk.');
     }
 }

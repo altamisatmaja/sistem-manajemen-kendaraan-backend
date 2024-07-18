@@ -11,7 +11,10 @@ class LoginController extends Controller
 {
     public function store(LoginRequest $request){
         $request->authenticate();
-        $request->session()->regenerate();
+
+        logger('User authenticated:', ['user' => Auth::user()]);
+
+
         if(Auth::user() && Auth::user()->role == 'Admin'){
             return redirect()->route('admin.dashboard');
         }
