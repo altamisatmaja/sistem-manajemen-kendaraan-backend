@@ -3,7 +3,17 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreVehicleBookingRequest;
+use App\Models\ApprovalLevel;
+use App\Models\ApprovalProcess;
+use App\Models\Approver;
+use App\Models\Employee;
+use App\Models\MiningState;
+use App\Models\Vehicle;
+use App\Models\VehicleBooking;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class BookingAdminController extends Controller
 {
@@ -15,11 +25,76 @@ class BookingAdminController extends Controller
         return view('pages.dashboard.admin.bookings.history');
     }
     public function create(Request $request){
-        // TODO
+        $mining_states = MiningState::all();
+        $employees = Employee::where('employee_position_id', 5)->get();
+        $vehicles = Vehicle::all();
+
+        $approver_collections = Approver::with('employees')->get();
+        $approvers = [];
+        foreach($approver_collections as $approver){
+            foreach ($approver->employees as $employee) {
+                $approvers[] = [
+                    'id' => $approver->id,
+                    'nama_lengkap' => $employee->nama_lengkap,
+                ];
+            }
+        }
+
+        return view('pages.dashboard.admin.bookings.create', compact('mining_states', 'employees', 'vehicles', 'approvers'));
     }
 
     public function store(Request $request){
-        // TODO
+        DB::beginTransaction();
+
+        try {
+            $validator = Validator::make($request->all(), [
+                'durasi' => 'required|integer',
+                'keperluan' => 'required|string',
+                'booked_at' => 'required|date',
+                'start_from_mining_id' => 'required|integer',
+                'end_to_mining_id' => 'required|integer',
+                'employee_id' => 'required|integer',
+                'vehicle_id' => 'required|integer',
+                'approvers' => 'required|array',
+                'approvers.*.approver_id' => 'required|integer',
+                'approvers.*.level' => 'required|integer|between:1,5',
+            ]);
+
+            // dd($request->all());
+
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors($validator)->withInput();
+            }
+
+            $vehicleBooking = VehicleBooking::create($request->only([
+                'durasi',
+                'keperluan',
+                'booked_at',
+                'start_from_mining_id',
+                'end_to_mining_id',
+                'employee_id',
+                'vehicle_id',
+            ]));
+
+            // dd($vehicleBooking);
+
+            foreach ($request->approvers as $approver) {
+                ApprovalProcess::create([
+                    'status' => 'Menunggu',
+                    'vehicle_booking_id' => $vehicleBooking->id,
+                    'approval_level_id' => ApprovalLevel::where('level', $approver['level'])->first()->id,
+                    'approver_id' => $approver['approver_id'],
+                ]);
+            }
+
+            DB::commit();
+
+            return redirect()->route('admin.dashboard.booking')->with('success', 'Booking berhasil dibuat!');
+
+        } catch (\Exception $e) {
+            DB::rollback();
+            return redirect()->back()->with('error', 'Booking gagal dibuat! '.$e->getMessage());
+        }
     }
     public function show(Request $request){
         // TODO

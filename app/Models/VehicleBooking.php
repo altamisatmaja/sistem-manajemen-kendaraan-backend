@@ -18,6 +18,6 @@ class VehicleBooking extends Model
         'start_from_mining_id',
         'end_to_mining_id',
         'employee_id',
-        'vehicles_id',
+        'vehicle_id',
     ];
 }

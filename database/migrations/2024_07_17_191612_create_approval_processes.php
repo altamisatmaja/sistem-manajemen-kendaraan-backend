@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->enum('status', ['Menunggu', 'Disetujui', 'Ditolak'])->default('Menunggu');
 
-            $table->dateTime('approved_at');
-            $table->dateTime('rejected_at');
+            $table->dateTime('approved_at')->nullable();
+            $table->dateTime('rejected_at')->nullable();
 
             $table->unsignedBigInteger('vehicle_booking_id');
             $table->unsignedBigInteger('approval_level_id');

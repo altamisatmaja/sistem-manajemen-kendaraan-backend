@@ -24,12 +24,21 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['role:Admin'])->group(function () {
     Route::get('admin/dashboard', [DashboardAdminController::class, 'index'])->name('admin.dashboard');
+
     Route::get('admin/dashboard/pemesanan/pengajuan', [BookingAdminController::class, 'index'])->name('admin.dashboard.booking');
+    Route::get('admin/dashboard/pemesanan/pengajuan/tambah', [BookingAdminController::class, 'create'])->name('admin.dashboard.booking.add');
+    Route::post('admin/dashboard/pemesanan/pengajuan/tambah', [BookingAdminController::class, 'store'])->name('admin.dashboard.booking.store');
     Route::get('admin/dashboard/pemesanan/riwayat-pengajuan', [BookingAdminController::class, 'history'])->name('admin.dashboard.booking.history');
+
     Route::get('admin/dashboard/karyawan', [EmployeeAdminController::class, 'index'])->name('admin.dashboard.employee');
+
     Route::get('admin/dashboard/bbm', [FuelAdminController::class, 'index'])->name('admin.dashboard.fuel');
+
     Route::get('admin/dashboard/riwayat', [HistoryAdminController::class, 'index'])->name('admin.dashboard.history');
+
     Route::get('admin/dashboard/kantor', [OfficeAdminController::class, 'index'])->name('admin.dashboard.office');
+
     Route::get('admin/dashboard/jadwal-servis', [ServiceScheduleAdminController::class, 'index'])->name('admin.dashboard.schedule-services');
+
     Route::get('admin/dashboard/kendaraan', [VehicleController::class, 'index'])->name('admin.dashboard.vehicle');
 });

@@ -12,8 +12,8 @@
             </div>
         </a>
     </li>
-    <li class="mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))]" x-data="{ open: {{ in_array(Request::segment(1), ['tasks']) ? 1 : 0 }} }">
-        <a class="block rounded-lg pl-3 pr-3 py-2 text-gray-800 hover:bg-orange-600  truncate transition @if (!in_array(Request::segment(1), ['tasks'])) {{ 'hover:text-white ' }} @endif"
+    <li class="mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))]" x-data="{ open: {{ in_array(Request::segment(1), ['pengajuan']) ? 1 : 0 }} }">
+        <a class="block rounded-lg pl-3 pr-3 py-2 text-gray-800 hover:bg-orange-600  truncate transition @if (!in_array(Request::segment(1), ['pengajuan'])) {{ 'hover:text-white ' }} @endif"
             href="#0" @click.prevent="open = !open; sidebarExpanded = true">
             <div class="flex items-center justify-between">
                 <div class="flex items-center duration-200">
@@ -25,7 +25,7 @@
                     <span class="text-lg font-medium ml-4">Reservasi</span>
                 </div>
                 <div class="flex shrink-0 ml-2 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
-                    <svg class="w-3 h-3 shrink-0 ml-1 fill-current   @if (in_array(Request::segment(1), ['tasks'])) {{ 'rotate-180' }} @endif"
+                    <svg class="w-3 h-3 shrink-0 ml-1 fill-current   @if (in_array(Request::segment(1), ['pengajuan'])) {{ 'rotate-180' }} @endif"
                         :class="open ? 'rotate-180' : 'rotate-0'" viewBox="0 0 12 12">
                         <path d="M5.9 11.4L.5 6l1.4-1.4 4 4 4-4L11.3 6z" />
                     </svg>

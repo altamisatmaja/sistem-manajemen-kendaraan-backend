@@ -34,5 +34,8 @@ class DatabaseSeeder extends Seeder
         $this->call(OfficeSeeder::class);
         $this->call(EmployeeSeeder::class);
         $this->call(ApproverSeeder::class);
+
+        $this->call(MiningStateSeeder::class);
+        $this->call(VehicleSeeder::class);
     }
 }
