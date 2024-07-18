@@ -18,7 +18,6 @@ class FuelConsumption extends Model
         'odometer',
         'keterangan',
         'attachment',
-        'region_id',
         'vehicle_id',
     ];
 }

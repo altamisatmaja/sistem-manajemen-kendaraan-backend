@@ -20,10 +20,8 @@ return new class extends Migration
             $table->string('keterangan');
             $table->string('attachment');
 
-            $table->unsignedBigInteger('region_id');
             $table->unsignedBigInteger('vehicle_id');
 
-            $table->foreign('region_id')->references('id')->on('regions')->onDelete('cascade');
             $table->foreign('vehicle_id')->references('id')->on('vehicles')->onDelete('cascade');
             $table->timestamps();
         });

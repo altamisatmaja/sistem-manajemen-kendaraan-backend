@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class EmployeeAdminController extends Controller
+class VehicleController extends Controller
 {
     public function index(){
-        return view('pages.dashboard.admin.employees.index');
+        return view('pages.dashboard.admin.vehicles.index');
     }
 }

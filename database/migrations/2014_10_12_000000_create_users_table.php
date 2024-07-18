@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('photo');
-            $table->enum('role', ['Admin', 'Approval']);
+            $table->enum('role', ['Admin', 'Approver']);
             $table->rememberToken();
             $table->timestamps();
         });

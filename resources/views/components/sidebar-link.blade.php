@@ -36,7 +36,7 @@
             <ul class="pl-8 mt-2 " :class="open ? '!block' : 'hidden'">
                 <li class="mb-5 last:mb-0">
                     <a class="block pl-3 text-gray-500  hover:text-gray-700  transition truncate"
-                        href="{{ route('admin.dashboard') }}">
+                        href="{{ route('admin.dashboard.booking') }}">
                         <div class="flex items-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
                                 width="20px" fill="#6b7280">
@@ -49,7 +49,7 @@
                 </li>
                 <li class="last:mb-0">
                     <a class="block pl-3 text-gray-500  hover:text-gray-700  transition truncate"
-                        href="{{ route('admin.dashboard') }}">
+                        href="{{ route('admin.dashboard.booking.history') }}">
                         <div class="flex items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
                                 width="20px" fill="#6b7280">
@@ -65,7 +65,7 @@
     </li>
     <li
         class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-orange-400 hover:text-white duration-200">
-        <a href="{{ route('dashboard') }}" class="block text-gray-800  truncate transition">
+        <a href="{{ route('admin.dashboard.schedule-services') }}" class="block text-gray-800  truncate transition">
             <div class="flex items-center hover:text-white">
                 <svg class="hover:text-white" xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960"
                     width="30px" fill="currentColor">
@@ -78,7 +78,7 @@
     </li>
     <li
         class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-orange-400 hover:text-white duration-200">
-        <a href="{{ route('dashboard') }}" class="block text-gray-800 hover:text-white truncate transition">
+        <a href="{{ route('admin.dashboard.fuel') }}" class="block text-gray-800 hover:text-white truncate transition">
             <div class="flex items-center hover:text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px"
                     fill="currentColor">
@@ -91,7 +91,7 @@
     </li>
     <li
         class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-orange-400 ">
-        <a class="block text-gray-800  truncate transition" href="{{ route('admin.dashboard') }}">
+        <a class="block text-gray-800  truncate transition" href="{{ route('admin.dashboard.office') }}">
             <div class="flex items-center hover:text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px"
                     fill="currentColor">
@@ -104,7 +104,7 @@
     </li>
     <li
         class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-orange-400 ">
-        <a class="block text-gray-800  truncate transition" href="{{ route('admin.dashboard') }}">
+        <a class="block text-gray-800  truncate transition" href="{{ route('admin.dashboard.vehicle') }}">
             <div class="flex items-center hover:text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px"
                     fill="currentColor">
@@ -117,7 +117,7 @@
     </li>
     <li
         class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-orange-400 ">
-        <a class="block text-gray-800  truncate transition" href="{{ route('admin.dashboard') }}">
+        <a class="block text-gray-800  truncate transition" href="{{ route('admin.dashboard.employee') }}">
             <div class="flex items-center hover:text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px"
                     fill="currentColor">
@@ -130,7 +130,7 @@
     </li>
     <li
         class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-orange-400 ">
-        <a class="block text-gray-800  truncate transition" href="{{ route('admin.dashboard') }}">
+        <a class="block text-gray-800  truncate transition" href="{{ route('admin.dashboard.history') }}">
             <div class="flex items-center hover:text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px"
                     fill="currentColor">
