@@ -111,3 +111,6 @@ php artisan serve
 | `approver8` | `approver` |
 | `approver9` | `approver` |
 
+## ERD 🤹🏻‍♂️
+### Relational
+![App Screenshot](https://github.com/altamisatmaja/sistem-manajemen-kendaraan-backend/blob/main/public/readme/erd.png?raw=true)
