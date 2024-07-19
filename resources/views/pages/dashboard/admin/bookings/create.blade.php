@@ -44,7 +44,7 @@
         </div>
     @endif
 
-    <div class="mx-auto w-full max-w-[550px]">
+    <div class="mx-auto w-full max-w-full">
         <form action="{{ route('admin.dashboard.booking.store') }}" method="POST"
             class="grid grid-cols-1 lg:grid-cols-2 gap-x-4">
             @csrf
