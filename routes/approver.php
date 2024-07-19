@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware(['auth', 'role: Admin'])->group(function (){
+Route::middleware(['role:Approver'])->group(function () {
     Route::get('approver/dashboard', [DashboardApproverController::class, 'index'])->name('approver.dashboard');
+    Route::post('approver/dashboard/pemesanan/{approvalProcessId}/update-status', [DashboardApproverController::class, 'updateApprovalStatus'])->name('approver.dashboard.booking.update-status');
 });
