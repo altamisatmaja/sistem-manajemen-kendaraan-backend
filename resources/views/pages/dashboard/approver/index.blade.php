@@ -98,10 +98,13 @@
                                                             method="POST">
                                                             @csrf
                                                             @method('POST')
-                                                            <button type="submit" class="px-3 py-2 lg:gap-x-2 font-medium text-md inline-flex items-center justify-center rounded-lg leading-5 transition bg-white border-2  border-gray-200 hover:border-gray-300  text-gray-400 ">Setujui</button>
+                                                            <button type="submit"
+                                                                class="px-3 py-2 lg:gap-x-2 font-medium text-md inline-flex items-center justify-center rounded-lg leading-5 transition bg-white border-2  border-gray-200 hover:border-gray-300  text-gray-800 ">Setujui</button>
                                                         </form>
                                                     @else
-                                                        Disetujui
+                                                        <p class="px-3 py-2 lg:gap-x-2 font-medium text-md inline-flex items-center justify-center rounded-lg leading-5 transition bg-white border-2  border-gray-200 hover:border-gray-300  text-gray-400">
+                                                            Disetujui
+                                                        </p>
                                                     @endif
                                                 </td>
                                             </tr>

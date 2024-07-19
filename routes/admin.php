@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\BookingAdminController;
+use App\Http\Controllers\Admin\BookingExportController;
 use App\Http\Controllers\Admin\DashboardAdminController;
 use App\Http\Controllers\Admin\EmployeeAdminController;
 use App\Http\Controllers\Admin\FuelAdminController;
@@ -28,6 +29,8 @@ Route::middleware(['role:Admin'])->group(function () {
     Route::get('admin/dashboard/pemesanan/pengajuan', [BookingAdminController::class, 'index'])->name('admin.dashboard.booking');
     Route::get('admin/dashboard/pemesanan/pengajuan/tambah', [BookingAdminController::class, 'create'])->name('admin.dashboard.booking.add');
     Route::post('admin/dashboard/pemesanan/pengajuan/tambah', [BookingAdminController::class, 'store'])->name('admin.dashboard.booking.store');
+    Route::get('admin/dashboard/pemesanan/util/export-excel', [BookingAdminController::class, 'exportToExcel'])->name('admin.dashboard.booking.excel');
+
     Route::get('admin/dashboard/pemesanan/riwayat-pengajuan', [BookingAdminController::class, 'history'])->name('admin.dashboard.booking.history');
 
     Route::get('admin/dashboard/karyawan', [EmployeeAdminController::class, 'index'])->name('admin.dashboard.employee');

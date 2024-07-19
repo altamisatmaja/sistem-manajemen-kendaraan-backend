@@ -4,24 +4,18 @@
 
 @section('content')
     <div>
-        <!-- Dashboard actions -->
         <div class="sm:flex sm:justify-between sm:items-center mb-8">
 
-            <!-- Left: Title -->
             <div class="mb-4 sm:mb-0">
                 <h1 class="text-2xl md:text-3xl text-gray-800 font-bold">Dashboard</h1>
             </div>
 
-            <!-- Right: Actions -->
             <div class="grid grid-flow-col sm:auto-cols-max justify-start sm:justify-end gap-2">
 
-                <!-- Filter button -->
                 @include('components.dropdown-filter', ['align' => 'right'])
 
-                <!-- Datepicker built with flatpickr -->
                 @include('components.datepicker')
 
-                <!-- Add view button -->
                 <button
                     class="px-3 lg:gap-x-2 font-medium text-md inline-flex items-center justify-center rounded-lg leading-5 transition bg-white border-2  border-gray-200 hover:border-gray-300  text-gray-400 ">
                     <svg class="fill-current shrink-0 xs:hidden" width="16" height="16" viewBox="0 0 16 16">

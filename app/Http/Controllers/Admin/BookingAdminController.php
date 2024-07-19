@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\VehicleBookingsExport;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreVehicleBookingRequest;
 use App\Models\ApprovalLevel;
@@ -15,6 +16,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use Maatwebsite\Excel\Facades\Excel;
 
 class BookingAdminController extends Controller
 {
@@ -131,4 +133,36 @@ class BookingAdminController extends Controller
     public function destroy(Request $request){
         // TODO
     }
+
+    public function exportToExcel()
+{
+    $vehicle_booking_collection = VehicleBooking::with('employees', 'vehicles', 'start_mining_states', 'end_mining_states')->get();
+
+    $vehicle_bookings = [];
+    foreach ($vehicle_booking_collection as $vehicle_booking) {
+        foreach ($vehicle_booking->employees as $employee) {
+            foreach ($vehicle_booking->vehicles as $vehicle) {
+                foreach ($vehicle_booking->start_mining_states as $start_state) {
+                    foreach ($vehicle_booking->end_mining_states as $end_state) {
+                        $vehicle_bookings[] = [
+                            'nama_kendaraan' => $vehicle->nama,
+                            'plat_nomor' => $vehicle->plat_nomor,
+                            'durasi' => $vehicle_booking->durasi,
+                            'keperluan' => $vehicle_booking->keperluan,
+                            'asal' => $start_state->nama_tambang,
+                            'tujuan' => $end_state->nama_tambang,
+                            'nama_driver' => $employee->nama_lengkap,
+                        ];
+                    }
+                }
+            }
+        }
+    }
+
+    $export = new VehicleBookingsExport();
+    $export->setVehicleBookings($vehicle_bookings);
+    $excel = Excel::download($export, 'vehicle_bookings.xlsx', \Maatwebsite\Excel\Excel::XLSX);
+
+    return $excel;
+}
 }
