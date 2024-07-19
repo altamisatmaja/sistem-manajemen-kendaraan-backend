@@ -26,6 +26,12 @@
             </main>
         </div>
     </div>
+    <script>
+        window.Laravel = {
+            apiBaseUrl: @json(config('api.api_url'))
+        };
+    </script>
+
     @stack('js')
 </body>
 

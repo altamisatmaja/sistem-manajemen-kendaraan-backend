@@ -33,7 +33,7 @@ import {
 
     const fetchData = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/api/chart/pemesanan-bulanan');
+        const response = await fetch(`${window.Laravel.apiBaseUrl}/api/chart/pemesanan-bulanan`);
         const data = await response.json();
 
         return {
